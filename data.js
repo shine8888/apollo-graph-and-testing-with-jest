@@ -1,22 +1,6 @@
-const data = [
-	{
-		id: 1,
-		name: "Shine",
-		age: 22,
-		address: "Hanoi",
-	},
-	{
-		id: 2,
-		name: "Kate",
-		age: 24,
-		address: "Bacgiang",
-	},
-	{
-		id: 3,
-		name: "Cathy",
-		age: 26,
-		address: "Co",
-	},
-];
+/**
+ * @const [number]
+ */
+const data = [1, 2, 4, 5, 6, 7];
 
 module.exports = { data };

@@ -1,22 +1,17 @@
-const {gql} = require('apollo-server')
-
+const { gql } = require("apollo-server");
+/**
+ * Init the TypeDefs with 2 types Query and Mutation
+ */
 const typeDefs = gql`
-    type User {
-        name: String!
-        age: Int!
-        address: String
-    }
+	#Query
+	type Query {
+		getData: [Int!]
+	}
 
-    # Queries
-    type Query {
-        getAllUser: [User!]!
-    }
+	# Mutation
+	type Mutation {
+		getSum(a: Int!): Int!
+	}
+`;
 
-
-    # Mutetations
-    type Mutation {
-        createUser(name: String!, age: Int!, address: String): User!
-    }
-`
-
-module.exports = {typeDefs}
+module.exports = { typeDefs };
