@@ -1,25 +1,26 @@
 {
-  "name": "apollo-graph",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "dev": "nodemon app"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "apollo-server": "^2.25.2",
-    "axios": "^0.21.1",
-    "express": "^4.17.1",
-    "graphql": "^15.5.1",
-    "graphql-tools": "^7.0.5",
-    "xmlhttprequest": "^1.8.0"
-  },
-  "devDependencies": {
-    "jest": "^27.0.6",
-    "nodemon": "^2.0.9"
-  }
+	"name": "apollo-graph",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest",
+		"dev": "nodemon app"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"apollo-server": "^2.25.2",
+		"axios": "^0.21.1",
+		"express": "^4.17.1",
+		"graphql": "^15.5.1",
+		"graphql-tools": "^7.0.5",
+		"jsdoc": "^3.6.7",
+		"xmlhttprequest": "^1.8.0"
+	},
+	"devDependencies": {
+		"jest": "^27.0.6",
+		"nodemon": "^2.0.9"
+	}
 }
