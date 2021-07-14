@@ -43,7 +43,7 @@ const resolvers = {
     },
   },
   /**
-   * Get sum of an array
+   * Login and return user with JWT
    * @param parent args - the email and password injected
    * @returns User - return user logged in with  token
    */
