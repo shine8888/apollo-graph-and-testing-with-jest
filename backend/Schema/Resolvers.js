@@ -14,18 +14,19 @@ const resolvers = {
     // This is getting data for only Admin
     getAllUser(root, args, context, models) {
       if (
-        !context.userInfor.user ||
-        !context.userInfor.user.role.includes("admin")
-      )
+        !context.user ||
+        !context.user.includes("aws.cognito.signin.user.admin")
+      ) {
         return [];
+      }
       const u = data;
       return u;
     },
     // This is getting data for only user
     getUser(root, args, context, models) {
       if (
-        !context.userInfor.user ||
-        !context.userInfor.user.role.includes("user")
+        !context.user ||
+        !context.user.includes("aws.cognito.signin.user.user")
       )
         return [];
       const u = data.filter((user) => user.role === "user");
@@ -33,11 +34,7 @@ const resolvers = {
     },
     // This is getting data for only NA Role
     getNaRole(root, args, context, models) {
-      if (
-        !context.userInfor.user ||
-        !context.userInfor.user.role.includes("user")
-      )
-        return [];
+      if (!context.user || !context.user.includes("aws.cognito.signin.user.na")) return [];
       const u = data.filter((user) => user.role === "NA");
       return u;
     },
@@ -49,7 +46,7 @@ const resolvers = {
    */
   Mutation: {
     // Login and return user with JWT Token
-    getLogin(parent, args) {
+    login(parent, args) {
       const user = data.find(
         (user) => user.email === args.email && user.password === args.password
       );

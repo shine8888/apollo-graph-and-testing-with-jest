@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { AuthGate } from "./AuthGate";
+import { ApolloProvider } from "@apollo/react-hooks";
+import { useAppApolloClient } from "./config/apolloClient";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { Admin } from "./Component/Admin";
+import { User } from "./Component/User";
+import { Na } from "./Component/Na";
 
 function App() {
+  const apolloClient = useAppApolloClient();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={apolloClient}>
+      <AuthGate />
+      <BrowserRouter>
+        <Route path="/admin" component={Admin}></Route>
+        <Route path="/user" component={User}></Route>
+        <Route path="/NA" component={Na}></Route>
+      </BrowserRouter>
+    </ApolloProvider>
   );
 }
 

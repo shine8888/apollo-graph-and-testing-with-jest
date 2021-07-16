@@ -21,7 +21,7 @@ const typeDefs = gql`
   }
   # Mutation
   type Mutation {
-    getLogin(email: String!, password: String!): User
+    login(email: String!, password: String!): User
   }
 `;
 
